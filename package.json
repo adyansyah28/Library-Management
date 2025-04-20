@@ -1,0 +1,20 @@
+{
+  "name": "library-manangement",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^1.19.0",
+    "dotenv": "^16.5.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.14.1"
+  }
+}
