@@ -1,4 +1,21 @@
 # Library-Management
+## Deskripsi
+Sebuah aplikasi untuk manajemen perpustakaan yang dibangun menggunakan **Express.js** dan **PostgreSQL** dengan menerapkan **struktur MVC** tanpa menggunakan view (hanya API).
+
+## Fitur
+- Autentikasi & Role-based Authorization.
+- CRUD pada buku.
+- Pencarian semua buku.
+- mencari buku berdasarkan judul atau penulis.
+- Pagination di List Buku.
+- Soft Delete Buku .
+-  Peminjaman Buku oleh Member.
+  
+## Teknologi yang Digunakan
+- **Node.js** dengan **Express.js** sebagai framework.
+- **PostgreSQL** sebagai database.
+- **MVC** (Model-View-Controller) tanpa View (API-based).
+- **JWT** Authentication.
 
 ## Installation
 1. Install Node.js
@@ -25,7 +42,7 @@ gh repo clone adyansyah28/Library-Management
 ```bash
 npm install
 ```
-
+  
 ## Configuration
 You will have to update some values in `config/db.js`
 
@@ -35,3 +52,10 @@ You will have to update some values in `config/db.js`
 |USER| Username of the postgreSQL User (default: `postgres`)|
 |PASSWORD|Password to the PostgreSQL User|
 |DB| The DB Name|
+
+Jika ingin menggunakan data template, import data dari file `library.sql`
+
+## Jalankan Program
+```bash
+npm start
+```
