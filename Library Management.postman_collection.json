@@ -1,0 +1,440 @@
+{
+	"info": {
+		"_postman_id": "0a07a3bf-a7ae-44c8-9f36-e376d4391951",
+		"name": "Library Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "44194679",
+		"_collection_link": "https://adyansyah.postman.co/workspace/Adyansyah's-Workspace~6e77d406-6bdb-4942-8ae2-6db4f1a68def/collection/44194679-0a07a3bf-a7ae-44c8-9f36-e376d4391951?action=share&source=collection_link&creator=44194679"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Moko\",\r\n    \"username\":\"mokomo\",\r\n    \"password\":\"mokoyo12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Adyansyah\",\r\n    \"password\":\"Admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjIyMzYsImV4cCI6MTc0NTE2OTQzNn0.TY6Y8tXUoHRRHn8nxjcfcUCdLqFgfP6KuWjV6hA1nUE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/auth/refreshToken"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjQyNjIsImV4cCI6MTc0NTE3MTQ2Mn0.eJnufiFejPa_uVDfyAU1g-frH7OAdpgr8K1Zx-n2FpY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/auth/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BOOK",
+			"item": [
+				{
+					"name": "All Role",
+					"item": [
+						{
+							"name": "Get Book List",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjk5OTYsImV4cCI6MTc0NTE3MzU5Nn0.c9JN-T6LmrZyhofs7rRN3s2XQkSBBVZ9eIkCDFzMo8U"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/api/book/"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Book by id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjk5OTYsImV4cCI6MTc0NTE3MzU5Nn0.c9JN-T6LmrZyhofs7rRN3s2XQkSBBVZ9eIkCDFzMo8U"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:3000/api/book/1"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Book by Search",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjk5OTYsImV4cCI6MTc0NTE3MzU5Nn0.c9JN-T6LmrZyhofs7rRN3s2XQkSBBVZ9eIkCDFzMo8U"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:3000/api/book/search/ma"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Book (Page)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjk5OTYsImV4cCI6MTc0NTE3MzU5Nn0.c9JN-T6LmrZyhofs7rRN3s2XQkSBBVZ9eIkCDFzMo8U"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/api/book/page/2"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Book by Search (Page)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjk5OTYsImV4cCI6MTc0NTE3MzU5Nn0.c9JN-T6LmrZyhofs7rRN3s2XQkSBBVZ9eIkCDFzMo8U"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:3000/api/book/search/sa/page/1"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Role Admin",
+					"item": [
+						{
+							"name": "Soft Delete",
+							"item": [
+								{
+									"name": "Get Book by id (Before)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjk5OTYsImV4cCI6MTc0NTE3MzU5Nn0.c9JN-T6LmrZyhofs7rRN3s2XQkSBBVZ9eIkCDFzMo8U"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": "http://localhost:3000/api/book/4"
+									},
+									"response": []
+								},
+								{
+									"name": "Delete",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjk5OTYsImV4cCI6MTc0NTE3MzU5Nn0.c9JN-T6LmrZyhofs7rRN3s2XQkSBBVZ9eIkCDFzMo8U"
+											}
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\":4,\r\n    \"is_deleted\":true\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost:3000/api/book/updateBook"
+									},
+									"response": []
+								},
+								{
+									"name": "Get Book by id (After Delete)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjk5OTYsImV4cCI6MTc0NTE3MzU5Nn0.c9JN-T6LmrZyhofs7rRN3s2XQkSBBVZ9eIkCDFzMo8U"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": "http://localhost:3000/api/book/4"
+									},
+									"response": []
+								},
+								{
+									"name": "Recovery",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjk5OTYsImV4cCI6MTc0NTE3MzU5Nn0.c9JN-T6LmrZyhofs7rRN3s2XQkSBBVZ9eIkCDFzMo8U"
+											}
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\":4,\r\n    \"is_deleted\":false\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost:3000/api/book/updateBook"
+									},
+									"response": []
+								},
+								{
+									"name": "Get Book by id (After Recovery)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjk5OTYsImV4cCI6MTc0NTE3MzU5Nn0.c9JN-T6LmrZyhofs7rRN3s2XQkSBBVZ9eIkCDFzMo8U"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": "http://localhost:3000/api/book/4"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Library Loan Book",
+							"item": [
+								{
+									"name": "Loan Book",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjk5OTYsImV4cCI6MTc0NTE3MzU5Nn0.c9JN-T6LmrZyhofs7rRN3s2XQkSBBVZ9eIkCDFzMo8U"
+											}
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\":17\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost:3000/api/book/loanBook"
+									},
+									"response": []
+								},
+								{
+									"name": "Return Book",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjk5OTYsImV4cCI6MTc0NTE3MzU5Nn0.c9JN-T6LmrZyhofs7rRN3s2XQkSBBVZ9eIkCDFzMo8U"
+											}
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\":17\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": "http://localhost:3000/api/book/returnBook"
+									},
+									"response": []
+								},
+								{
+									"name": "Get Loan List",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjk5OTYsImV4cCI6MTc0NTE3MzU5Nn0.c9JN-T6LmrZyhofs7rRN3s2XQkSBBVZ9eIkCDFzMo8U"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": "http://localhost:3000/api/book//getLoanList/page/1"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Add Book",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjk5OTYsImV4cCI6MTc0NTE3MzU5Nn0.c9JN-T6LmrZyhofs7rRN3s2XQkSBBVZ9eIkCDFzMo8U"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Merah Muda\",\r\n    \"writer\":\"Aditya\",\r\n    \"quantity\":3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/api/book/addBook"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Book",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjk5OTYsImV4cCI6MTc0NTE3MzU5Nn0.c9JN-T6LmrZyhofs7rRN3s2XQkSBBVZ9eIkCDFzMo8U"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 14,\r\n    \"title\":\"Indonesia Cerah\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/api/book/updateBook"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete (Permanent)",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJBZHlhbnN5YWgiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDUxNjk5OTYsImV4cCI6MTc0NTE3MzU5Nn0.c9JN-T6LmrZyhofs7rRN3s2XQkSBBVZ9eIkCDFzMo8U"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":16\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/api/book/delete"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
