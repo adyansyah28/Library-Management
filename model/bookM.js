@@ -7,7 +7,6 @@ async function getBook() {
     const getQuery =
       "SELECT id,title,writer,quantity,created_by,created_at,updated_at FROM book WHERE is_deleted=false ORDER BY title";
     response = await connection.query(getQuery);
-    console.log(response.rows);
     return response.rows;
   } catch (error) {}
 }

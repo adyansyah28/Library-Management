@@ -95,10 +95,16 @@ async function refreshToken(req, res) {
           expiresIn: "1h",
         }
       );
+
       return res.status(200).json({
         status: true,
         message: "Success Refresh Access Token",
         accessToken: accessToken,
+      });
+    } else {
+      return res.status(400).json({
+        status: false,
+        message: "Unauthorized",
       });
     }
   } catch (error) {
